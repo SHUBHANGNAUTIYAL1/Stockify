@@ -1,0 +1,3060 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!-- Meta -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	
+	<meta http-equiv="X-UA compatible" content="ie=edge">
+
+	<!-- External links -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+		integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+		crossorigin="anonymous" />
+	
+	
+	
+	 <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+		<style>
+
+		@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Open+Sans:wght@300;400&family=Raleway:wght@200;300&display=swap');
+
+/* Css reset */
+* {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+}
+
+/* Main styling */
+body {
+   font-family: 'Raleway', sans-serif;
+   font-weight: 100;
+   line-height: 1.6;
+   color: #333;
+}
+
+h1, h2, h3 {
+   padding-bottom: 0.625rem;
+   line-height: 1.3;
+   font-weight: 100;
+}
+
+p {
+   margin: 0.625rem 0;
+}
+
+ul {
+   list-style: none;
+}
+
+a {
+   text-decoration: none;
+   color: #333;
+}
+
+img {
+   width: 100%;
+}
+
+/* Navbar */
+.navbar {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   background: #333;
+   color: #fff;
+   height: 4.375rem;
+   width: 100%;
+   padding: 1.25rem 0.625rem;
+   position: fixed;
+   top: 0;
+   transition: 0.9s;
+}
+
+.navbar.top {
+   background: transparent;
+}
+
+.navbar a {
+   color: #fff;
+   padding: 0.625rem 0.938rem;
+}
+
+.navbar .logo {
+   font-size: 1.5rem;
+   padding: 0.938rem;
+   order: 2;
+   transform: translateX(-50%);
+}
+
+.navbar nav {
+   order: 1;
+}
+
+.navbar nav a {
+   padding: 0.938rem;
+   font-weight: 900;
+   font-size: 0.938rem;
+   transition: all 0.4s ease-in-out;
+}
+
+.navbar nav a:hover {
+   border-bottom: 0.125rem solid #fff;
+}
+
+.navbar ul {
+   display: flex;
+}
+
+.navbar .social {
+   order: 3;
+   margin-right: 1.25rem;
+}
+
+.navbar .social a {
+   opacity: 0.5;
+   padding: 0 1.25rem;
+   transition: all 0.4s ease-in-out;
+}
+
+.navbar .social a:hover {
+   opacity: 1;
+}
+
+/* Hero */
+.hero {
+   background: url('https://g.foolcdn.com/editorial/images/483350/buy-stock-2-4.jpg') no-repeat center center/cover;
+   height: 100vh;
+   color: #fff;
+   position: relative;
+   padding-top: 0.938rem;
+}
+
+.hero .content {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+   height: 100%;
+   padding: 0 1.25rem;
+   line-height: 1.8;
+}
+
+.hero .content h1 {
+   font-size: 6.25rem;
+   font-weight: 600;
+   padding-bottom: 1.25rem;
+   z-index:1;
+}
+
+.hero .content p {
+   font-size: 1.375rem;
+   z-index: 1;
+}
+
+.hero .content .btn {
+   margin-top: 1.25rem;
+}
+
+.hero::before {
+   content: '';
+   position: absolute;
+   top: 0;
+   left: 0;
+   height: 100%;
+   width: 100%; 
+   background: rgba(0, 0, 0, 0.4);
+}
+
+.hero * {
+   z-index: 10;
+}
+
+/* Icons */
+.icons {
+   padding: 1.25rem;
+}
+
+.icons i {
+   font-size: 2.5rem;
+   color: #14af74;
+   padding-bottom: 1rem;
+}
+
+.icons h3 {
+   font-weight: 600;
+}
+
+/* food */
+.food img {
+   border-radius: 0.188rem;
+}
+
+.food img:hover {
+   opacity: 0.7;
+}
+
+/* Rooms */
+.rooms p {
+   font-weight: 500;
+}
+
+.rooms .room {
+   display: flex;
+   flex-direction: row;
+   padding: 0 1.25rem;
+   font-weight: 500;
+}
+
+.rooms .room > div {
+   display: flex;
+   flex-direction: column;
+   padding: 0 1.25rem;
+}
+
+.rooms .room img {
+   border-radius: 0.188rem;
+}
+
+.rooms .room h3 {
+   padding-top: 1.25rem;
+   font-weight: 500;
+   font-size: 1.313rem;
+}
+
+.rooms .room .list {
+   padding: 0.938rem 0 1.875rem 0;
+}
+
+.rooms .room .list ul {
+   list-style: disc;
+   padding: 0 1.125rem;
+   font-size: 1.063rem;
+}
+
+.rooms .room .list ul li {
+   padding: 0.313rem 0;
+}
+
+.rooms .room .btn {
+   width: 100%;
+   margin-top: 0.625rem;
+   text-align: center;
+}
+
+.rooms .room .btn:hover {
+   background: #3cce96;
+   color: #fff;
+}
+
+/* Contact */
+.contact h2 {
+   font-weight: 500;
+   padding-top: 0.625rem 0;
+}
+
+.contact form {
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   justify-content: center;
+   width: 100%;
+}
+
+.contact input {
+   width: 100%;
+   padding: 0.625rem;
+   border: 0.063rem solid #ddd;
+}
+
+.contact input:focus {
+   outline: none;
+   border: 0.063rem solid #59d8a7;
+   font-size: 0.825rem;
+}
+
+.contact .form-group {
+   padding-bottom:1.25rem;
+   width: 100%;
+}
+
+.form-group label {
+   display: none;
+}
+
+.contact .btn {
+   padding:0.75rem;
+}
+
+/* About-info */
+.hero.about-post {
+   background: url(../img/home/about-post.jpg) no-repeat center center/cover;
+   height: 50vh;
+}
+
+.hero.about-post .content {
+   padding-top: 1.25rem;
+}
+
+.hero.about-post .content h1 {
+   font-size: 4.375rem;
+}
+
+.post {
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   justify-content: center;
+   padding: 2.5rem 2.813rem;
+   font-weight: 500;
+   font-size: 1.094rem;
+   text-align: center;
+}
+
+.post h1 {
+   font-weight: 500;
+   padding-top: 0.625rem;
+   font-size: 2.125rem;
+}
+
+.post-one {
+   padding: 1.875rem 0 1.875rem;
+   border-bottom: 0.063rem solid #3cce96;
+}
+
+.rooms.about-rooms .btn:hover {
+   background: #14af74;
+}
+
+.post-two {
+   padding: 0 0 1.25rem;
+   margin: 0 0 1.875rem;
+   border-bottom: 0.063rem solid #14af74;
+}
+
+.post-two:last-child {
+   border-bottom: none;
+}
+
+.contact-info {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+   padding: 0 0 1.875rem;
+   font-size: 1.25rem;
+   font-weight: 500;
+}
+
+.contact-info p {
+   padding: 0 1.25rem;
+}
+
+.contact-info i {
+   color: #aaa;
+   padding: 0.625rem;
+}
+
+.contact-info p:last-child {
+   background: #3cce96;
+   color: #fff;
+   padding: 0.938rem;
+   border: 0.063rem solid #ddd;
+}
+
+/* Thank you */
+.card-text {
+   background-color: #080723;
+   height: 100vh;
+   color: #fff;
+}
+
+.thankyou {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+   height: 80%;
+   margin: 0 3.125rem;
+}
+
+.thankyou .content {
+   background: url('../img/home/thankyou.gif') no-repeat center center/cover;
+   padding-top: 25rem;
+   font-weight: 500;
+}
+
+.thankyou .content h1 {
+   font-size: 2.813rem;
+   background-color: #0284d0;
+   padding: 0.313rem;
+   border-radius: 0.313rem;
+}
+
+.thankyou .content p {
+   font-size: 0.95rem;
+}
+
+.footer-thankyou {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+   margin-top: 3.125rem;
+}
+
+.footer-thankyou .socials a {
+   font-size: 1rem;
+   color: #0284d0;
+}
+
+.footer-thankyou .socials a:hover {
+   color: #fff;
+}
+/* Footer */
+.footer {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+   padding: 1.875rem;
+}
+
+.socials a {
+   font-size: 1.25rem;
+   color: #fff;
+   padding: 0.5rem 0.625rem;
+}
+
+.socials a:hover {
+   color: #14af74;
+}
+
+.imag {
+        padding-top: 10px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100rem;
+        height: 30rem;
+        max-width: 200rem;
+      }
+      .card-text1 {
+        position: relative;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 30rem;
+        width: 100%;
+        padding-bottom: 100px;
+        background: white;
+      }
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      /* Dropdown Content hidden by Default */
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: ;
+        min-width: 160px;
+        z-index: 1;
+      }
+
+      /* Links inside the dropdown */
+      .dropdown-content a {
+        color: white;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+      .dropdown-content p {
+        color: black;
+        font-weight: 500;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+
+      /* Change color of dropdown links on hover */
+      .dropdown-content button:hover {
+        color: blue;
+        font-size: 20px;
+      }
+
+      /* Show the dropdown menu on hover */
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+      .dropdown-content button {
+        border: 0px;
+        background: whitesmoke;
+        padding: 0px;
+		margin-left:10px;
+      }
+
+	  .card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+
+  transition: 0.3s;
+  width: 200px;
+  height:auto;
+  
+   margin: 50px 50px 50px;
+   
+   
+   display: inline-block;
+   margin-bottom: 50px;
+   border-radius:5px
+ 
+  
+  
+  
+ 
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+.form1{
+      width:420px;
+      height:500px;
+      margin-left:400px;
+      padding:50px;
+      background-color:#EEE;
+      color:#333;
+      border:2px solid #C2D6FF;
+      border-radius:40px 0 40px 0;
+    }
+
+    label
+    {
+      
+         font-size:15px;
+         font-weight:700
+         
+    }
+     .submit {
+      background-color:orange;
+	  margin-top: 30px;
+      border-radius:5px;
+      border:none;
+      padding:10px 25px;
+      color:#FFF;
+      text-shadow:1px 1px 1px #949494;
+      margin-left:100px
+      }
+	  .submit:hover
+	  {
+		background-color:green;
+	  }
+      .input{
+         
+         
+         background-repeat:no-repeat;
+         background-position:6px;
+         border:1px solid #DADADA;
+         margin-top:10px;
+         margin-bottom:10px;
+         padding-left:35px;
+         width:310px;
+         height:30px;
+         font-size:14px;
+         box-shadow:0 0 10px;
+         -webkit-box-shadow:0 0 10px;
+         /* For I.E */
+         -moz-box-shadow:0 0 10px;
+         /* For Mozilla Web Browser */
+         border-radius:5px;
+         -webkit-border-radius:5px;
+         /* For I.E */
+         -moz-border-radius:5px;
+
+      }
+
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+.button2
+{
+	background:#1f75fe;
+	color:white;
+	border-radius:5px;
+	height:50px;
+	width:120px;
+	margin-left:20px;
+	margin-bottom:40px;
+	margin-top:30px;
+	border:white;
+	 box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+.button2:hover
+{
+background:Blue;
+height:60px;
+width:140px;
+border-radius:20px;
+}
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+
+/* Media queries */
+/* ? @900px */
+@media(max-width: 56.25rem) {
+   .navbar .logo {
+      order: 1;
+      padding: 0.938rem 0;
+      transform: none;
+   }
+   
+   .navbar nav {
+      order: 3;
+   }
+   
+   .navbar .social {
+      display: none;
+      order: 2;
+   }
+   
+   .hero .content h1 {
+      font-size: 4.688rem;
+   }
+
+   .hero .content p {
+      font-size: 1.25rem;
+   }
+   .form1{
+	margin-left:10px;
+   }
+  
+}
+
+/* ? @768px */
+@media(max-width: 48rem) {
+   .flex-items {
+      flex-direction: column;
+   }
+
+   section.flex-columns .column {
+      flex: 100%;
+      max-width: 100%;
+   }
+
+   section.flex-grid .column {
+      flex: 50%;
+      max-width: 50%;
+   }
+
+   .rooms .room {
+      flex-direction: column;
+      padding: 0.313rem 6.25rem;
+   }
+
+   .rooms .room > div {
+      padding: 0;
+   }
+   .form1{
+	margin-left:10px;
+	width:380px;
+   }
+   
+}
+
+/* ? @600px */
+@media(max-width: 37.5rem) {
+   .navbar {
+      flex-direction: column;
+      height: 6.875rem;
+   }
+
+   .navbar .logo {
+      padding: 0 1.25rem 0.938rem;
+   }
+
+   .navbar nav a {
+      padding: 0.938rem 0.813rem;
+   }
+   .form1{
+	margin-left:10px;
+	width:360px;
+   }
+   .input
+   {
+	width:300px;
+	margin-left:-10px;
+   }
+
+  
+}
+
+/* ? @500px */
+@media(max-width: 31.25rem) {
+   .hero .content {
+      line-height: 1.6;
+   }
+
+   .hero .content p {
+      font-size: 1.188rem;
+   }
+
+   .rooms .room {
+      padding: 0.625rem 1.875rem;
+   }
+   .form1{
+	margin-left:10px;
+	width:340px;
+   }
+   .input
+   {
+	width:280px;
+	margin-left:-10px;
+   }
+   
+}
+
+
+	</style>
+	<!-- CSS only -->
+	
+
+	<!-- Js links -->
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"
+		integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+	<!--<script src="js/lightbox.min.js"></script>-->
+	
+	<title>Stockify</title>
+
+	<!-- Favicon -->
+	
+</head>
+
+<body id="home">
+	<header class="hero">
+		<div id="navbar" class="navbar top">
+			<h1 class="logo">
+				<a href="#home">
+					<span style="color:green"><i class="fas fa-dragon" style="color:white;"></i> <strong>Stoc</strong></span>kify
+				</a>
+			</h1>
+			<nav>
+				<ul>
+					<li><a href="/index">Home</a></li>
+					<li>
+						<div class="dropdown">
+							<a style="color: white">Companies</a>
+							<br />
+							<br />
+							<div class="dropdown-content" style="
+					                    overflow: auto;
+					                    height: 500px;
+					                    width: 15rem;
+
+					                    
+					                    background: whitesmoke;
+					                  ">
+								<br />
+								<h5 align="center" style="color: red">
+									<i class="fas fa-dragon" style="color: success; font-size: 28px"></i><strong>&nbsp;NSE
+										COMPANIES</strong>
+								</h5>
+								<br />
+								<ol>
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="AARTIIND">
+												AARTIIND.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="AAVAS">AAVAS.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="ABB">ABB.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="ABBOTINDIA">
+												ABBOTINDIA.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="ACC">ACC.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="ADANIENT">
+												ADANIENT.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="ADANIGREEN">
+												ADANIGREEN.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="ADANIPORTS">
+												ADANIPORTS.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="ATGL">ATGL.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="ADANITRANS">
+												ADANITRANS.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="ABCAPITAL">
+												ABCAPITAL.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="ABFRL">ABFRL.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="ADVENZYMES">
+												ADVENZYMES.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="AEGISCHEM">
+												AEGISCHEM.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="AFFLE">AFFLE.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="AIAENG">AIAENG.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="AJANTPHARM">
+												AJANTPHARM.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="AKZOINDIA">
+												AKZOINDIA.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="BOMDYEING">
+												BOMDYEING.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="ATUL">ATUL.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="BAJAJELEC">
+												BAJAJELEC.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="BAJFINANCE">
+												BAJFINANCE.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="HINDPETRO">
+												HINDPETRO.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="MRPL">MRPL.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="CHENNPETRO">
+												CHENNPETRO.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="SBIN">SBIN.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="SAIL">SAIL.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="EXIDEIND">
+												EXIDEIND.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="CIPLA">CIPLA.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="CRISIL">CRISIL.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="DABUR">DABUR.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="BHEL">BHEL.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="BALRAMCHIN">
+												BALRAMCHIN.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="CENTURYTEX">
+												CENTURYTEX.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="BASF">BASF.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="BATAINDIA">
+												BATAINDIA.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="BEML">BEML.NS</button>
+										</form>
+									</li>
+									<br />
+					
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="BEL">BEL.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="BLUESTARCO">
+												BLUESTARCO.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="CESC">CESC.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="CHAMBLFERT">
+												CHAMBLFERT.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="KSB">KSB.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="TRENT">TRENT.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="LAXMIMACH">
+												LAXMIMACH.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="LICHSGFIN">
+												LICHSGFIN.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="LUPIN">LUPIN.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="RAMCOCEM">
+												RAMCOCEM.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="MAHSEAMLES">
+												MAHSEAMLES.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="MAHSCOOTER">
+												MAHSCOOTER.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="MFSL">MFSL.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="SPICEJET">
+												SPICEJET.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="MRF">MRF.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="HEIDELBERG">
+												HEIDELBERG.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="NCC">NCC.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="GRASIM">GRASIM.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="PEL">PEL.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="INGERRAND">
+												INGERRAND.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="JSWSTEEL">
+												JSWSTEEL.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="KAJARIACER">
+												KAJARIACER.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="WHIRLPOOL">
+												WHIRLPOOL.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="ONGC">ONGC.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="RAYMOND">RAYMOND.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="BIRLACORPN">
+												BIRLACORPN.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="PRSMJOHNSN">
+												PRSMJOHNSN.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="RAIN">RAIN.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="BPCL">BPCL.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="SIEMENS">SIEMENS.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="VOLTAS">VOLTAS.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="GESHIP">GESHIP.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="GLAXO">GLAXO.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="GNFC">GNFC.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="BAJAJHLDNG">
+												BAJAJHLDNG.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="BHARATFORG">
+												BHARATFORG.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="ESCORTS">ESCORTS.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="LT">LT.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="BOSCHLTD">
+												BOSCHLTD.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="BBTC">BBTC.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="RALLIS">RALLIS.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="JINDALSAW">
+												JINDALSAW.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="JKLAKSHMI">
+												JKLAKSHMI.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="SHREECEM">
+												SHREECEM.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="TATAPOWER">
+												TATAPOWER.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="SUNDRMFAST">
+												SUNDRMFAST.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="SUPPETRO">
+												SUPPETRO.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="SWARAJENG">
+												SWARAJENG.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="TATAELXSI">
+												TATAELXSI.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="IDBI">IDBI.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="ACC">ACC.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="THERMAX">THERMAX.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="TORNTPHARM">
+												TORNTPHARM.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="AMBUJACEM">
+												AMBUJACEM.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="HINDALCO">
+												HINDALCO.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="PGHH">PGHH.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="FEDERALBNK">
+												FEDERALBNK.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="TATASTEEL">
+												TATASTEEL.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="SKFINDIA">
+												SKFINDIA.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="ASHOKLEY">
+												ASHOKLEY.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="CUMMINSIND">
+												CUMMINSIND.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="TATACOMM">
+												TATACOMM.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="ABBOTINDIA">
+												ABBOTINDIA.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="ASTRAZEN">
+												ASTRAZEN.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="SANFOI">SANOFI.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="PFIZER">PFIZER.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="GSFC">GSFC.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="AKZOINDIA">
+												AKZOINDIA.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="NOCIL">NOCIL.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="TATACHEM">
+												TATACHEM.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="SCHAEFFLER">
+												SCHAEFFLER.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="GRIDWELL">
+												GRINDWELL.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="BLISSGVS">
+												BLISSGVS.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="ALEMBICLTD">
+												ALEMBICLTD.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="BAYERCROP">
+												BAYERCROP.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="COROMANDEL">
+												COROMANDEL.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="DEEPAKNTR">
+												DEEPAKNTR.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="PCBL">PCBL.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="SUDARSCHEM">
+												SUDARSCHEM.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="ALKYLAMINE">
+												ALKYLAMINE.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="EIHOTEL">EIHOTEL.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="INDHOTEL">
+												INDHOTEL.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="CASTROLIND">
+												CASTROLIND.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="APOLLOTYRE">
+												APOLLOTYRE.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="CEATLTD">CEATLTD.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="FINPIPE">FINPIPE.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="TATAINVEST">
+												TATAINVEST.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="CHOLAHLDNG">
+												CHOLAHLDNG.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="EICHERMOT">
+												EICHERMOT.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="GMMPFAUDLR">
+												GMMPFAUDLR.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="NESCO">NESCO.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="WESTLIFE">
+												WESTLIFE.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="ZEEL">ZEEL.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="IFBIND">IFBIND.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="BERGERPAINT">
+												BERGEPAINT.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="GRAPHITE">
+												GRAPHITE.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="GARFIBRES">
+												GARFIBRES.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="HEG">HEG.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="HUHTAMAKI">
+												HUHTAMAKI.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="SUPREMEIND">
+												SUPREMEIND.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="VSTIND">VSTIND.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="CANFINHOME">
+												CANFINHOME.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="DHANUKA">DHANUKA.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="GILLETTE">
+												GILLETTE.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="VIPIND">VIPIND.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="APOLLOHOSP">
+												APOLLOHOSP.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="NAVNETEDUL">
+												NAVNETEDUL.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="MOTHERSUMI">
+												MOTHERSUMI.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="HAVELLS">HAVELLS.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="SYMPHONY">
+												SYMPHONY.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="TTKPRESTIG">
+												TTKPRESTIG.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="KEI">KEI.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="TASTYBITE">
+												TASTYBITE.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="HERITGFOOD">
+												HERITGFOOD.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="CCL">CCL.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="SRTRANSFIN">
+												SRTRANSFIN.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="CHOLAFIN">
+												CHOLAFIN.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="VAKRANGEE">
+												VAKRANGEE.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="UPL">UPL.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="SUNTECK">SUNTECK.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="JAICORPLTD">
+												JAICORPLTD.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="SEQUENT">SEQUENT.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="AVANTIFEED">
+												AVANTIFEED.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="ADANIENT">
+												ADANIENT.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="NESTLEIND">
+												NESTLEIND.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="TATACONSUM">
+												TATACONSUM.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="ASIANPAINT">
+												ASIANPAINT.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="BRITANNIA">
+												BRITANNIA.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="COLPAL">COLPAL.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="CARBORUNIV">
+												CARBORUNIV.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="MMTC">MMTC.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="HINDCOPPER">
+												HINDCOPPER.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="NLCINDIA">
+												NLCINDIA.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="WELSPUNIND">
+												WELSPUNIND.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="HONAUT">HONAUT.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="HATSUN">HATSUN.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="SUNPHARMA">
+												SUNPHARMA.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="CAPLIPOINT">
+												CAPLIPOINT.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="AUROPHARMA">
+												AUROPHARMA.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="NATCOPHARM">
+												NATCOPHARM.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="MPHASIS">MPHASIS.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="NMDC">NMDC.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="BLUEDART">
+												BLUEDART.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="BANKINDIA">
+												BANKINDIA.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="JAMNAAUTO">
+												JAMNAAUTO.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="JTEKTINDIA">
+												JTEKTINDIA.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="RATNAMANI">
+												RATNAMANI.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="TRIDENT">TRIDENT.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="ALOKINDS">
+												ALOKINDS.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="ELGIEQUIP">
+												ELGIEQUIP.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="TIMKEN">TIMKEN.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="PRAJIND">PRAJIND.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="KALPATPOWR">
+												KALPATPOWR.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="VENKEY">VENKEYS.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="BALMLAWRIE">
+												BALMLAWRIE.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="DCMSRIND">
+												DCMSRIND.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="NILKAMAL">
+												NILKAMAL.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="JCHAC">JCHAC.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="JMFINANCIL">
+												JMFINANCIL.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="LINDEINDIA">
+												LINDEINDIA.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="IRCON">IRCON.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="SCI">SCI.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="ITI">ITI.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="NFL">NFL.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="LAOPALA">LAOPALA.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="GUJALKALI.NS">
+												GUJALKALI.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="INDIACEM">
+												INDIACEM.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="JKTYRE">JKTYRE.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="RELAXO">RELAXO.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="SHILPAMED">
+												SHILPAMED.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="KRBL">KRBL.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="AJANTPHARM">
+												AJANTPHARM.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="POLYPLEX">
+												POLYPLEX.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="IOLCP">IOLCP.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="VINATIORGA">
+												VINATIORGA.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="AARTIIND">
+												AARTIIND.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="GAEL">GAEL.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="RCF">RCF.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="AARTIDRUGS">
+												AARTIDRUGS.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="IPCALAB">IPCALAB.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="GAIL">GAIL.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="VAIBHAVGBL">
+												VAIBHAVGBL.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="KJPAPER">JKPAPER.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="CYIENT">CYIENT.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="ENGINERSIN">
+												ENGINERSIN.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="GMDCLTD">GMDCLTD.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="IOC">IOC.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="EMAMILTD">
+												EMAMILTD.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="MANAPPURAM">
+												MANAPPURAM.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="ZYDUSWELL">
+												ZYDUSWELL.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="CONCOR">CONCOR.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="RAJESHEXPO">
+												RAJESHEXPO.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="CGCL">CGCL.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="FDC">FDC.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="MARICO">MARICO.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="POLYMED">POLYMED.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="BANKBARODA">
+												BANKBARODA.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="WELCORP">WELCORP.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="ULTRACEMCO">
+												ULTRACEMCO.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="INDUSINDBK">
+												INDUSINDBK.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="J&KBANK">J&KBANK.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="CUB">CUB.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="AXISBANK">
+												AXISBANK.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="SOUTHBANK">
+												SOUTHBANK.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="SONATSOFTW">
+												SONATSOFTW.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="NATIONALUM">
+												NATIONALUM.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="INDOCO">INDOCO.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="GREAVESCOT">
+												GREAVESCOT.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="BALKRISIND">
+												BALKRISIND.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="VTL">VTL.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="PHOENIXLTD">
+												PHOENIXLTD.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="SWANENERGY">
+												SWANENERGY.BO
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="SRF">SRF.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="ZENSARTECH">
+												ZENSARTECH.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="IIFL">IIFL.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="SHOPERSTOP">
+												SHOPERSTOP.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="JKCEMENT">
+												JKCEMENT.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="YESBANK">YESBANK.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="KTKBANK">KTKBANK.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="SUZLON">SUZLON.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="PVR">PVR.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="GMRINFRA">
+												GMRINFRA.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="DIVISLAB">
+												DIVISLAB.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="RADICO">RADICO.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="SHRIRAMCIT">
+												SHRIRAMCIT.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="NAVINFLUOR">
+												NAVINFLUOR.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="UCOBANK">UCOBANK.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="JSL">JSL.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="SUPRAJIT">
+												SUPRAJIT.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="TECHM">TECHM.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="DCBBANK">DCBBANK.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="NAUKRI">NAUKRI.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="TORNTPOWER">
+												TORNTPOWER.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="SOBHA">SOBHA.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="PAGEIND">PAGEIND.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="CERA">CERA.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="BHARTIARTL">
+												BHARTIARTL.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="PNB">PNB.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="OFSS">OFSS.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="UNIONBANK">
+												UNIONBANK.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="UBL">UBL.NS</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="GRANUELS">
+												GRANULES.NS
+											</button>
+										</form>
+									</li>
+									<br />
+									<li>
+										<form action="/stocks" method="post">
+											<button id="bu" name="name" value="CANBK">CANBK.NS</button>
+										</form>
+									</li>
+									<br />
+								</ol>
+							</div>
+						</div>
+					</li>
+					
+					
+					<li>
+						<div class="dropdown">
+							<a style="color: white">Search</a>
+							<br />
+							<br />
+							<form action="/stocks" method="POST">
+								<div class="dropdown-content">
+									<div class="card-text5">
+										<input name="name" type="text" maxlength="12" placeholder="company symbol" class="searchbar" style="
+					                          border-radius: 20px;
+					                          height: 40px;
+					                          width: 200px;
+					                          padding: 10px;
+					                        " />
+										<img src="https://images-na.ssl-images-amazon.com/images/I/41gYkruZM2L.png" alt="search icon"
+											class="button" style="
+					                          position: absolute;
+					                          height: 20px;
+					                          width: 20px;
+					                          right: 10px;
+					                          top: 6px;
+					                        " />
+									</div>
+								</div>
+							</form>
+						</div>
+					</li>
+					<li>
+						<form action="/invest"><a href="/invest">Invest</a></form>
+					</li>
+					<li><a href="/AboutUs">About</a></li>
+					
+				</ul>
+			</nav>
+
+			<div class="social">
+				<ul>
+					<li><a href="https://web.facebook.com/" rel="noreferrer noopener"><i
+								class="fab fa-facebook"></i></a></li>
+					<li><a href="https://twitter.com/" rel="noreferrer noopener"><i
+								class="fab fa-twitter"></i></a></li>
+					<li><a href="https://www.instagram.com/shubhangnautiyal/" rel="noreferrer noopener"><i
+								class="fab fa-instagram"></i></a></li>
+					<li><a href="https://www.linkedin.com/in/shubhang-nautiyal-600a27207/" rel="noreferrer noopener"><i
+								class="fab fa-linkedin"></i></a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="content">
+			<h1>In Investing</h1>
+			<p style="font-size: 50px">what is comfortable is rarely profitable</p>
+			
+		</div>
+	</header>
+
+	<br>
+	<br>
+	<div class="slideshow-container-bg">
+	
+		<div class="mySlides fade">
+	
+			<img src="https://th.bing.com/th/id/R.ae525581b636ecd2c4425eb4856ceb61?rik=IXLek3O6dC2RoQ&riu=http%3a%2f%2fcheckall.in%2fwp-content%2fuploads%2f2018%2f08%2fWarren-Buffett-motivational-quotes.jpg&ehk=D%2bgQl1a2es18%2fmZfFEA5pdPyU5Yte%2fzpXcFzg1Qnf90%3d&risl=&pid=ImgRaw&r=0"
+				style="width:100%">
+	
+		</div>
+	
+		<div class="mySlides fade">
+	
+			<img src="https://www.azquotes.com/vangogh-image-quotes/84/92/Quotation-Warren-Buffett-The-best-investment-you-can-make-is-an-investment-in-84-92-34.jpg"
+				style="width:100%">
+	
+		</div>
+	
+		<div class="mySlides fade">
+	
+			<img src="https://www.yourselfquotes.com/wp-content/uploads/Stock-Market-Quotes-by-Robert-Arnott.png"
+				style="width:100%">
+	
+		</div>
+	
+	</div>
+	<br>
+	
+	<div style="text-align:center">
+		<span class="dot"></span>
+		<span class="dot"></span>
+		<span class="dot"></span>
+	</div>
+	<br>
+	<div class="my-4 bg-dark text-dark" style="background:black">
+		<h1 class="my-3" style="text-align:center; color:white;">
+			<marquee><strong>Please &nbsp; fill &nbsp; this &nbsp; form &nbsp; to &nbsp;check&nbsp; profitable
+					&nbsp;companies &nbsp;for &nbsp; investment</strong></marquee>
+		</h1>
+	</div>
+	<br>
+	<div class="form1">
+		<h2 style="text-align:center; font-weight:700"><i class="fas fa-dragon"
+				style=" color :green; font-size:28px;position:centre"></i> Investment Form</h2>
+	
+		<form action="/risk" class="form-container" method="POST">
+			<label>Full Name :</label>
+	
+			<input class="input" id="fname" placeholder="Full Name" name="nam" type="text" required>
+			<br>
+			<label>Amount :</label>
+	
+			<input class="input" id="input" placeholder="amount" name="shu" type="text" required>
+			<label>Risk Level :</label><br>
+	
+			<select name="MAC" class="input" >
+				<option value="nothing" selected="selected" required>select the risk level</option>
+				<option value="Low">LOW</option>
+				<option value="Medium">MEDIUM</option>
+				<option value="High">HIGH</option>
+	
+	
+	
+			</select><br>
+	
+			<label>No. Of Days :</label>
+	
+			<input class="input" id="fdays" placeholder="Investment time" name="p" type="text" required><br>
+			<input class="submit" id="submit" type="submit" value="Submit">
+		</form>
+	</div>
+	<br>
+
+	<!-- About: icons-->
+	<script>
+		const navbar = document.getElementById('navbar');
+			let scrolled = false;
+
+			window.onscroll = function () {
+				if (window.pageYOffset > 500) {
+					navbar.classList.remove('top')
+					if (!scrolled) {
+						navbar.style.transform = "translateY(-70px)";
+					}
+					setTimeout(function () {
+						navbar.style.transform = "translateY(0)";
+						scrolled = true;
+					}, 250);
+				} else {
+					navbar.classList.add('top');
+					scrolled = false;
+				}
+			}
+
+			// Smooth Scrolling
+			$('#navbar a').on('click', function (e) {
+				if (this.hash !== '') {
+					e.preventDefault();
+
+					const hash = this.hash;
+
+					$('html, body').animate(
+						{
+							scrollTop: $(hash).offset().top - 50,
+						},
+						900
+					);
+				}
+			});
+
+			// Tawk.to Chat box Script
+			var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+			(function () {
+				var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+				s1.async = true;
+				s1.src = 'https://embed.tawk.to/60dd436c65b7290ac638d1d9/1f9g4uo63';
+				s1.charset = 'UTF-8';
+				s1.setAttribute('crossorigin', '*');
+				s0.parentNode.insertBefore(s1, s0);
+			})();
+
+			let slideIndex = 0;
+				showSlides();
+
+				function showSlides() {
+					let i;
+					let slides = document.getElementsByClassName("mySlides");
+					let dots = document.getElementsByClassName("dot");
+					for (i = 0; i < slides.length; i++) {
+						slides[i].style.display = "none";
+					}
+					slideIndex++;
+					if (slideIndex > slides.length) {
+						slideIndex = 1;
+					}
+					for (i = 0; i < dots.length; i++) {
+						dots[i].className = dots[i].className.replace(" active", "");
+					}
+					slides[slideIndex - 1].style.display = "block";
+					dots[slideIndex - 1].className += " active";
+					setTimeout(showSlides, 2000); // Change image every 2 seconds
+				}
+	</script>
+
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+		crossorigin="anonymous"></script>
+	<!-- JavaScript Bundle with Popper -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+		integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+		crossorigin="anonymous"></script>
+	
+</body>
+
+<footer id="footer" class="footer " style="background:#333;color:white">
+	<div class="socials">
+		<a href="https://web.facebook.com/" rel="noreferrer noopener"><i class="fab fa-facebook"></i></a>
+		<a href="https://twitter.com/" rel="noreferrer noopener"><i class="fab fa-twitter"></i></a>
+		<a href="https://www.instagram.com/shubhangnautiyal/"
+			rel="noreferrer noopener"><i class="fab fa-instagram"></i></a>
+		<a href="https://www.linkedin.com/in/shubhang-nautiyal-600a27207/" rel="noreferrer noopener"><i
+				class="fab fa-linkedin"></i></a>
+	</div>
+	<p>Copyright &copy; 2022&nbsp; | &nbsp; <a href="thankyou.html"><i class="fas fa-dragon" style="color:white;"></i></a><span style="color:green"><strong>&nbsp;Stoc</strong></span>kify
+	</p>
+</footer>
+
+</html>
+
+<!-- Test Comment -->
